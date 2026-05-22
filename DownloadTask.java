@@ -15,15 +15,12 @@ import javafx.scene.control.ProgressBar;
 public class DownloadTask implements Runnable {
 
     // ── Fields ───────────────────────────────────────────
-    private final String fileName;
     private final ProgressBar progressBar;
     private final Label statusLabel;
 
     // ── Constructor ──────────────────────────────────────
-    public DownloadTask(String fileName,
-                        ProgressBar progressBar,
+    public DownloadTask( ProgressBar progressBar,
                         Label statusLabel) {
-        this.fileName    = fileName;
         this.progressBar = progressBar;
         this.statusLabel = statusLabel;
     }
@@ -33,7 +30,7 @@ public class DownloadTask implements Runnable {
     public void run() {
 
         // Step 1 — mark as downloading
-        updateUI(0, "⏳ Downloading...");
+        updateUI(0, "Downloading...");
 
         // Step 2 — simulate progress from 0% to 100%
         for (int progress = 0; progress <= 100; progress += 10) {
@@ -42,17 +39,17 @@ public class DownloadTask implements Runnable {
                 Thread.sleep(300); // simulate download speed
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                updateUI(0, "❌ Cancelled");
+                updateUI(0, "Cancelled");
                 return;
             }
 
             // capture for lambda
             final double value = progress / 100.0;
-            updateUI(value, "⏳ " + progress + "%");
+            updateUI(value, progress + "%");
         }
 
         // Step 3 — mark as done
-        updateUI(1.0, "✅ Done!");
+        updateUI(1.0, "Done!");
     }
 
     // ── Safe UI Update ───────────────────────────────────

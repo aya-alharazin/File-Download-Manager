@@ -24,7 +24,7 @@ public class Main extends Application {
 
         // Set up the stage
         Scene scene = new Scene(root, 550, 520);
-        stage.setTitle("📥 Download Manager");
+        stage.setTitle("Download Manager");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
