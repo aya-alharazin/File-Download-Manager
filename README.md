@@ -83,3 +83,14 @@ FileDownloadManager/
 └── download.fxml
     └── JavaFX UI layout created using Scene Builder
 ```
+---
+
+## Lecture Video
+
+[![Watch the lecture](https://img.shields.io/badge/YouTube-Watch%20Lecture-red?style=for-the-badge&logo=youtube)](https://youtu.be/BgZ5EQdnmUY?si=1OxBZPl15iPe9o6d)
+
+
+---
+## License
+
+Licensed under the MIT License — free to use for learning and educational purposes.
